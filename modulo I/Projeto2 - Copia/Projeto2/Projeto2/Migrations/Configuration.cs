@@ -29,12 +29,12 @@
 
             context.Contas.Add(new Conta()
             {
-               // Agencia = "0796",
-               // Banco = "Itau",
-               // Limite = 100,
-               // ContaCorrente = "60450-2",
-               // Saldo= 1000,
-               // ClientId = 1
+                Agencia = "0796",
+                Banco = "Itau",
+                Limite = 100,
+                ContaCorrente = "60450-2",
+                Saldo= 1000,
+                ClientId = 1
 
             });
            

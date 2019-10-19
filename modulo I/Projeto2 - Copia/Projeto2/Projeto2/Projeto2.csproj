@@ -51,9 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Banco.cs" />
-    <Compile Include="BancoMap.cs" />
-    <Compile Include="BancoRepository.cs" />
     <Compile Include="Conta.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteMap.cs" />
@@ -75,10 +72,6 @@
     <Compile Include="Migrations\201910150057162_v3.designer.cs">
       <DependentUpon>201910150057162_v3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910191151043_CriacaoBanco.cs" />
-    <Compile Include="Migrations\201910191151043_CriacaoBanco.designer.cs">
-      <DependentUpon>201910191151043_CriacaoBanco.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Projeto2Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,9 +92,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910150057162_v3.resx">
       <DependentUpon>201910150057162_v3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910191151043_CriacaoBanco.resx">
-      <DependentUpon>201910191151043_CriacaoBanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

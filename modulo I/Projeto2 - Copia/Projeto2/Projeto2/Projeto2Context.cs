@@ -16,26 +16,17 @@ namespace Projeto2
         public DbSet<Conta> Contas { get; set; } // cria a tabela
         public DbSet<Cliente> Clientes { get; set; } // cria a tabela
 
-        public DbSet<Banco> Bancos { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)  // modo que vai criar - buscar a classe da ContaMap.cs
         {
             modelBuilder.Properties<string>().Configure(p => p.HasColumnType("varchar")); // Quando a propriedade for String configura como VARCHAR
 
-            modelBuilder.Configurations.Add(new BancoMap()); // Configuração da tabela TAB_BANCO
-            modelBuilder.Configurations.Add(new ContaMap());  // Configuração da tabela TAB_CONTA
-            modelBuilder.Configurations.Add(new ClienteMap());  // Configuração da tabela TAB_CLIENTE
-            
+            modelBuilder.Configurations.Add(new ContaMap());  // Configuração da tabela Conta
+            modelBuilder.Configurations.Add(new ClienteMap());  // Configuração da tabela Cliente
 
             modelBuilder.Entity<Conta>()
                         .HasRequired<Cliente>(c => c.Cliente)
                         .WithMany(a => a.Contas)
                         .HasForeignKey<int>(c => c.ClientId);
-
-            modelBuilder.Entity<Conta>()
-                        .HasRequired<Banco>(d => d.Banco)
-                        .WithMany(e => e.Contas)
-                        .HasForeignKey<int>(f => f.BancoId);
 
             base.OnModelCreating(modelBuilder);
         }
