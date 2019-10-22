@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Projeto2
 {
+    
     public class Banco
     {
         public int Id { get; set; }
@@ -13,6 +15,14 @@ namespace Projeto2
         public string NomeDoBanco { get; set; }
 
         public virtual ICollection<Conta> Contas { get; set; }
+
+        public int QuantidadeContas
+        {
+            get
+            {
+                return Contas.Count;
+            }
+        }
 
     }
 }

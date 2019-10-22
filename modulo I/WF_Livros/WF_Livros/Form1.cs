@@ -19,7 +19,6 @@ namespace WF_Livros
         public Form1()
         {
             InitializeComponent();
-            
         }
 
         private void Bt_Salvar_Click(object sender, EventArgs e)

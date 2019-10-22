@@ -75,6 +75,7 @@
             this.btn_Salvar.TabIndex = 4;
             this.btn_Salvar.Text = "Salvar";
             this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Click += new System.EventHandler(this.Btn_Salvar_Click);
             // 
             // frm_BancosManutencao
             // 

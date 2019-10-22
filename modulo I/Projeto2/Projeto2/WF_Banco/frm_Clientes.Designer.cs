@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.bt_AdicionarCliente = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrid_Clientes = new System.Windows.Forms.DataGridView();
             this.NomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataDeNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bt_Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Bt_Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Clientes)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_AdicionarCliente
@@ -47,28 +47,30 @@
             this.bt_AdicionarCliente.UseVisualStyleBackColor = true;
             this.bt_AdicionarCliente.Click += new System.EventHandler(this.Bt_AdicionarCliente_Click);
             // 
-            // dataGridView1
+            // dgrid_Clientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrid_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomeCliente,
             this.DataDeNascimento,
             this.Bt_Editar,
             this.Bt_Excluir});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(683, 387);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            this.dgrid_Clientes.Location = new System.Drawing.Point(12, 12);
+            this.dgrid_Clientes.Name = "dgrid_Clientes";
+            this.dgrid_Clientes.Size = new System.Drawing.Size(683, 387);
+            this.dgrid_Clientes.TabIndex = 3;
+            this.dgrid_Clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // NomeCliente
             // 
+            this.NomeCliente.DataPropertyName = "NomeTitular";
             this.NomeCliente.HeaderText = "Nome";
             this.NomeCliente.Name = "NomeCliente";
             this.NomeCliente.Width = 350;
             // 
             // DataDeNascimento
             // 
+            this.DataDeNascimento.DataPropertyName = "Nascimento";
             this.DataDeNascimento.HeaderText = "Nascimento";
             this.DataDeNascimento.Name = "DataDeNascimento";
             // 
@@ -87,11 +89,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgrid_Clientes);
             this.Controls.Add(this.bt_AdicionarCliente);
             this.Name = "frm_Clientes";
             this.Text = "frm_Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Clientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,7 +101,7 @@
         #endregion
 
         private System.Windows.Forms.Button bt_AdicionarCliente;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrid_Clientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataDeNascimento;
         private System.Windows.Forms.DataGridViewButtonColumn Bt_Editar;

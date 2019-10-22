@@ -10,7 +10,7 @@ namespace Projeto2
     {
         public int Id { get; set; }
         public int BancoId { get; set; }
-        public Banco Banco { get; set; }
+        public Banco Banco { get; set; }   // Link de navegacao 
 
         //public string Banco { get; set; }
         public string  Agencia { get; set; }
@@ -18,7 +18,7 @@ namespace Projeto2
         public decimal Saldo { get; set; }
         public decimal Limite { get; set; }
         public int ClientId { get; set; }
-        public Cliente Cliente { get; set; }
+        public Cliente Cliente { get; set; } // Link de navegacao 
 
         public override string ToString()
         {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrid_Contas = new System.Windows.Forms.DataGridView();
             this.bt_AdicionarCliente = new System.Windows.Forms.Button();
             this.CodigoBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Agencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,13 +38,13 @@
             this.Limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bt_Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Bt_Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Contas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgrid_Contas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrid_Contas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_Contas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodigoBanco,
             this.Agencia,
             this.ContaCorrente,
@@ -53,10 +53,10 @@
             this.Limite,
             this.Bt_Editar,
             this.Bt_Excluir});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(805, 387);
-            this.dataGridView1.TabIndex = 5;
+            this.dgrid_Contas.Location = new System.Drawing.Point(12, 12);
+            this.dgrid_Contas.Name = "dgrid_Contas";
+            this.dgrid_Contas.Size = new System.Drawing.Size(805, 387);
+            this.dgrid_Contas.TabIndex = 5;
             // 
             // bt_AdicionarCliente
             // 
@@ -70,33 +70,39 @@
             // 
             // CodigoBanco
             // 
+            this.CodigoBanco.DataPropertyName = "BancoId";
             this.CodigoBanco.HeaderText = "Banco";
             this.CodigoBanco.Name = "CodigoBanco";
             this.CodigoBanco.Width = 80;
             // 
             // Agencia
             // 
+            this.Agencia.DataPropertyName = "Agencia";
             this.Agencia.HeaderText = "Agencia";
             this.Agencia.Name = "Agencia";
             this.Agencia.Width = 80;
             // 
             // ContaCorrente
             // 
+            this.ContaCorrente.DataPropertyName = "ContaCorrente";
             this.ContaCorrente.HeaderText = "Conta Corrente";
             this.ContaCorrente.Name = "ContaCorrente";
             // 
             // Saldo
             // 
+            this.Saldo.DataPropertyName = "Saldo";
             this.Saldo.HeaderText = "Saldo";
             this.Saldo.Name = "Saldo";
             // 
             // Cliente
             // 
+            this.Cliente.DataPropertyName = "ClienteId";
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.Name = "Cliente";
             // 
             // Limite
             // 
+            this.Limite.DataPropertyName = "Limite";
             this.Limite.HeaderText = "Limite";
             this.Limite.Name = "Limite";
             // 
@@ -115,18 +121,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgrid_Contas);
             this.Controls.Add(this.bt_AdicionarCliente);
             this.Name = "frm_Conta";
             this.Text = "frm_Conta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Contas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrid_Contas;
         private System.Windows.Forms.Button bt_AdicionarCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoBanco;
         private System.Windows.Forms.DataGridViewTextBoxColumn Agencia;

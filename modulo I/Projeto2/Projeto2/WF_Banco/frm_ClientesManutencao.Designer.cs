@@ -32,7 +32,7 @@
             this.txt_NomeDoCliente = new System.Windows.Forms.TextBox();
             this.lbl_NomeDoCliente = new System.Windows.Forms.Label();
             this.lbl_DataDeNascimento = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.date_Nascimento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btn_Salvar
@@ -70,19 +70,19 @@
             this.lbl_DataDeNascimento.TabIndex = 8;
             this.lbl_DataDeNascimento.Text = "Data de Nascimento:";
             // 
-            // dateTimePicker1
+            // date_Nascimento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 44);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.date_Nascimento.Location = new System.Drawing.Point(124, 44);
+            this.date_Nascimento.Name = "date_Nascimento";
+            this.date_Nascimento.Size = new System.Drawing.Size(200, 20);
+            this.date_Nascimento.TabIndex = 9;
             // 
             // frm_ClientesManutencao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 86);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.date_Nascimento);
             this.Controls.Add(this.lbl_DataDeNascimento);
             this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.txt_NomeDoCliente);
@@ -100,6 +100,6 @@
         private System.Windows.Forms.TextBox txt_NomeDoCliente;
         private System.Windows.Forms.Label lbl_NomeDoCliente;
         private System.Windows.Forms.Label lbl_DataDeNascimento;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker date_Nascimento;
     }
 }
