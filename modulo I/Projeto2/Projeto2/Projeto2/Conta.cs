@@ -22,7 +22,8 @@ namespace Projeto2
 
         public override string ToString()
         {
-            return $"{Banco} - {Saldo}";
+            // return $"{Banco} - {Saldo}";
+            return $"Id={Id} - Conta Corrente={ContaCorrente} - Saldo={Saldo}";
         }
     }    
 

@@ -34,9 +34,9 @@ namespace WF_Banco
 
         private void Bt_AdicionarBanco_Click(object sender, EventArgs e)
         {
-            frm_BancosManutencao frm = new frm_BancosManutencao();
+            frm_BancosManutencao frm = new frm_BancosManutencao(0);
             frm.ShowDialog();
-            repository.Inserir(frm.BancoManutencao);
+            repository.Inserir(frm.Banco);
             AtualizarGrid();
         }
         private void AtualizarGrid()
@@ -48,6 +48,32 @@ namespace WF_Banco
             
         }
 
+        private void Dgrid_Bancos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           // MessageBox.Show("Identificado o click", "ok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Banco itemSelecionado = (Banco)dgrid_Bancos.Rows[e.RowIndex].DataBoundItem;
+
+            if (dgrid_Bancos.Columns[e.ColumnIndex].Name == "Bt_Editar") // Editar
+            {
+              //  MessageBox.Show("Clicou no botão Editar", "ok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                frm_BancosManutencao frm = new frm_BancosManutencao(itemSelecionado.Id);
+                frm.ShowDialog();
+                AtualizarGrid();
+            }
+
+            if (dgrid_Bancos.Columns[e.ColumnIndex].Name == "Bt_Excluir") // Excluir
+            {
+                DialogResult result = MessageBox.Show("Deseja apagar?", "Remover", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    repository.Apagar(itemSelecionado.Id);
+                    AtualizarGrid();
+                }
+            }
+
+        }
     }
 
   

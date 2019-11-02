@@ -81,6 +81,15 @@ namespace Projeto2
             Context.Database.ExecuteSqlCommand($"UPDATE TAB_CONTA SET saldo=saldo+{valor} WHERE id={contaDestino.Id}");
 
         }
+        public bool ExisteSaldo(int id, decimal valor)
+        {
+            using (Projeto2Context context = new Projeto2Context())
+            {
+                Conta conta = context.Contas.Where(a => a.Id == id).FirstOrDefault();
+
+                return conta.Saldo >= valor ? true : false;
+            }
+        }
 
     }
 }

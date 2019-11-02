@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dgrid_Bancos = new System.Windows.Forms.DataGridView();
-            this.bt_AdicionarBanco = new System.Windows.Forms.Button();
             this.CodigoBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeDoBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bt_Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Bt_Excluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bt_AdicionarBanco = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_Bancos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,16 +49,7 @@
             this.dgrid_Bancos.Name = "dgrid_Bancos";
             this.dgrid_Bancos.Size = new System.Drawing.Size(683, 220);
             this.dgrid_Bancos.TabIndex = 0;
-            // 
-            // bt_AdicionarBanco
-            // 
-            this.bt_AdicionarBanco.Location = new System.Drawing.Point(520, 239);
-            this.bt_AdicionarBanco.Name = "bt_AdicionarBanco";
-            this.bt_AdicionarBanco.Size = new System.Drawing.Size(175, 23);
-            this.bt_AdicionarBanco.TabIndex = 1;
-            this.bt_AdicionarBanco.Text = "Incluir Novo";
-            this.bt_AdicionarBanco.UseVisualStyleBackColor = true;
-            this.bt_AdicionarBanco.Click += new System.EventHandler(this.Bt_AdicionarBanco_Click);
+            this.dgrid_Bancos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgrid_Bancos_CellContentClick);
             // 
             // CodigoBanco
             // 
@@ -82,6 +73,16 @@
             // 
             this.Bt_Excluir.HeaderText = "Apagar";
             this.Bt_Excluir.Name = "Bt_Excluir";
+            // 
+            // bt_AdicionarBanco
+            // 
+            this.bt_AdicionarBanco.Location = new System.Drawing.Point(520, 239);
+            this.bt_AdicionarBanco.Name = "bt_AdicionarBanco";
+            this.bt_AdicionarBanco.Size = new System.Drawing.Size(175, 23);
+            this.bt_AdicionarBanco.TabIndex = 1;
+            this.bt_AdicionarBanco.Text = "Incluir Novo";
+            this.bt_AdicionarBanco.UseVisualStyleBackColor = true;
+            this.bt_AdicionarBanco.Click += new System.EventHandler(this.Bt_AdicionarBanco_Click);
             // 
             // frm_Bancos
             // 

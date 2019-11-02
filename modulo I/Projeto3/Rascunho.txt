@@ -1,0 +1,30 @@
+
+Produtos
+inteiro Id 
+string DescricaoDoProduto
+decimal ValorDeCompra
+inteiro PercentualDeLucro
+decimal ValorDeVenda
+char Ativo
+
+Estoque
+inteiro Id
+decimal QtdeEstoque
+decimal QtdeMinimoEstoque
+char Ativo
+
+Cliente
+inteiro Id
+string NomeDoCliente
+Date DataDeNascimento
+Date DataDeUltimaCompra
+
+Venda
+inteiro IdDoCliente
+inteiro IdDoProduto
+Decimal Qtde
+-----------
+Decimal ValorDeVenda
+Decimal ValorPago
+Decimal	ValorTroco
+

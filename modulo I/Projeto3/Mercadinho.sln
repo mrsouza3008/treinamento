@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercadinho", "Mercadinho\Mercadinho.csproj", "{B56F2DBC-05D9-4C7D-8CD8-DA86A0AAE650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mercadinho_INTERFACE", "InterfaceMercadinho\Frm_Principal_Mercadinho\Mercadinho_INTERFACE.csproj", "{64CFD203-F14C-495D-94FD-9B12FD3B5C9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B56F2DBC-05D9-4C7D-8CD8-DA86A0AAE650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56F2DBC-05D9-4C7D-8CD8-DA86A0AAE650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56F2DBC-05D9-4C7D-8CD8-DA86A0AAE650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56F2DBC-05D9-4C7D-8CD8-DA86A0AAE650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64CFD203-F14C-495D-94FD-9B12FD3B5C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CFD203-F14C-495D-94FD-9B12FD3B5C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CFD203-F14C-495D-94FD-9B12FD3B5C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CFD203-F14C-495D-94FD-9B12FD3B5C9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB9DBCB8-6D38-4445-83EC-CB04FD71976C}
+	EndGlobalSection
+EndGlobal

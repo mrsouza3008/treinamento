@@ -15,6 +15,7 @@ namespace WF_Banco
     {
         public ClienteRepository repository = new ClienteRepository();
 
+
         public List<Cliente> Clientes { get; set; }
 
         public void Initialize()
@@ -32,7 +33,7 @@ namespace WF_Banco
 
         private void Bt_AdicionarCliente_Click(object sender, EventArgs e)
         {
-            frm_ClientesManutencao frm = new frm_ClientesManutencao();
+            frm_ClientesManutencao frm = new frm_ClientesManutencao(0);
             frm.ShowDialog();
             repository.Inserir(frm.ClientesManutencao);
             AtualizarGrid();
@@ -40,7 +41,12 @@ namespace WF_Banco
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgrid_Clientes.Columns[e.ColumnIndex].Name == "bt_Editar") // Editar
+            {
+                Cliente itemSelecionado = (Cliente)dgrid_Clientes.Rows[e.RowIndex].DataBoundItem;
 
+                frm_ClientesManutencao frm = new frm_ClientesManutencao(itemSelecionado.Id);
+            }
         }
 
         private void AtualizarGrid()

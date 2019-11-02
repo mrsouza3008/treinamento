@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WF_Banco
+namespace Frm_Principal_Mercadinho
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace WF_Banco
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+            Application.Run(new ATelaPrincipal());
         }
     }
 }

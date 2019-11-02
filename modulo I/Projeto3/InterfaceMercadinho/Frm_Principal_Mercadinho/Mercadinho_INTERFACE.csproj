@@ -1,20 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="..\..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C335545-E2A1-4733-8E18-E1E5E4029AF4}</ProjectGuid>
+    <ProjectGuid>{64CFD203-F14C-495D-94FD-9B12FD3B5C9A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WF_Banco</RootNamespace>
-    <AssemblyName>WF_Banco</AssemblyName>
+    <RootNamespace>Mercadinho_INTERFACE</RootNamespace>
+    <AssemblyName>Mercadinho_INTERFACE</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,10 +52,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -56,11 +71,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_CaixaEletronico.cs">
+    <Compile Include="ATelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_CaixaEletronico.Designer.cs">
-      <DependentUpon>frm_CaixaEletronico.cs</DependentUpon>
+    <Compile Include="ATelaPrincipal.Designer.cs">
+      <DependentUpon>ATelaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ClientesManutencao.cs">
       <SubType>Form</SubType>
@@ -68,67 +83,40 @@
     <Compile Include="frm_ClientesManutencao.Designer.cs">
       <DependentUpon>frm_ClientesManutencao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Bancos.cs">
+    <Compile Include="frm_ClientesLista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Bancos.Designer.cs">
-      <DependentUpon>frm_Bancos.cs</DependentUpon>
+    <Compile Include="frm_ClientesLista.Designer.cs">
+      <DependentUpon>frm_ClientesLista.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_BancosManutencao.cs">
+    <Compile Include="frm_EstoqueLista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_BancosManutencao.Designer.cs">
-      <DependentUpon>frm_BancosManutencao.cs</DependentUpon>
+    <Compile Include="frm_EstoqueLista.Designer.cs">
+      <DependentUpon>frm_EstoqueLista.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Clientes.cs">
+    <Compile Include="frm_ProdutosLista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Clientes.Designer.cs">
-      <DependentUpon>frm_Clientes.cs</DependentUpon>
+    <Compile Include="frm_ProdutosLista.Designer.cs">
+      <DependentUpon>frm_ProdutosLista.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Conta.cs">
+    <Compile Include="frm_Vendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Conta.Designer.cs">
-      <DependentUpon>frm_Conta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_ContaManutencao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_ContaManutencao.Designer.cs">
-      <DependentUpon>frm_ContaManutencao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Principal1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Principal1.Designer.cs">
-      <DependentUpon>frm_Principal1.cs</DependentUpon>
+    <Compile Include="frm_Vendas.Designer.cs">
+      <DependentUpon>frm_Vendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frm_Bancos.resx">
-      <DependentUpon>frm_Bancos.cs</DependentUpon>
+    <EmbeddedResource Include="ATelaPrincipal.resx">
+      <DependentUpon>ATelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_BancosManutencao.resx">
-      <DependentUpon>frm_BancosManutencao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_CaixaEletronico.resx">
-      <DependentUpon>frm_CaixaEletronico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Clientes.resx">
-      <DependentUpon>frm_Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="frm_ClientesLista.resx">
+      <DependentUpon>frm_ClientesLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ClientesManutencao.resx">
       <DependentUpon>frm_ClientesManutencao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Conta.resx">
-      <DependentUpon>frm_Conta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_ContaManutencao.resx">
-      <DependentUpon>frm_ContaManutencao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Principal1.resx">
-      <DependentUpon>frm_Principal1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,6 +126,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -154,18 +143,30 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Projeto2\Projeto2.csproj">
-      <Project>{19e50e44-f49b-43fe-b49a-077729f00adc}</Project>
-      <Name>Projeto2</Name>
+    <ProjectReference Include="..\..\Mercadinho\Mercadinho.csproj">
+      <Project>{b56f2dbc-05d9-4c7d-8cd8-da86a0aae650}</Project>
+      <Name>Mercadinho</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
 </Project>

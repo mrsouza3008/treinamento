@@ -1,6 +1,6 @@
 ﻿namespace WF_Banco
 {
-    partial class frmPrincipal
+    partial class FrmPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -72,6 +72,7 @@
             this.bt_CaixaEletronico.TabIndex = 3;
             this.bt_CaixaEletronico.Text = "CAIXA ELETRÔNICO";
             this.bt_CaixaEletronico.UseVisualStyleBackColor = true;
+            this.bt_CaixaEletronico.Click += new System.EventHandler(this.Bt_CaixaEletronico_Click);
             // 
             // frmPrincipal
             // 

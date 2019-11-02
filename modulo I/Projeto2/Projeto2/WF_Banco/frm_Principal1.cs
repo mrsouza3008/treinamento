@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WF_Banco
 {
-    public partial class frmPrincipal : Form
+    public partial class FrmPrincipal : Form
     {
-        public frmPrincipal()
+        public FrmPrincipal()
         {
             InitializeComponent();
         }
@@ -33,6 +33,12 @@ namespace WF_Banco
         private void Bt_Contas_Click(object sender, EventArgs e)
         {
             frm_Conta frm = new frm_Conta();
+            frm.ShowDialog();
+        }
+
+        private void Bt_CaixaEletronico_Click(object sender, EventArgs e)
+        {
+            frm_CaixaEletronico frm = new frm_CaixaEletronico();  
             frm.ShowDialog();
         }
     }
