@@ -51,6 +51,7 @@
             this.dbGrid_Clientes.Name = "dbGrid_Clientes";
             this.dbGrid_Clientes.Size = new System.Drawing.Size(744, 267);
             this.dbGrid_Clientes.TabIndex = 0;
+            this.dbGrid_Clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DbGrid_Clientes_CellContentClick);
             // 
             // Nome_do_Cliente
             // 

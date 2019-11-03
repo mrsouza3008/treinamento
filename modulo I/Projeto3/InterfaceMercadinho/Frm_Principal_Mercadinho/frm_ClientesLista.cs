@@ -43,12 +43,27 @@ namespace Frm_Principal_Mercadinho
 
         private void Bt_IncluirCliente_Click(object sender, EventArgs e)
         {
-            Frm_ClientesManutencao frm = new Frm_ClientesManutencao();
+            Frm_ClientesManutencao frm = new Frm_ClientesManutencao(0);
             Hide();
             frm.ShowDialog();
             repository.Inserir(frm.ClienteManutencao);
             Show();
             AtualizarGrid();
+        }
+
+        private void DbGrid_Clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dbGrid_Clientes.Columns[e.ColumnIndex].Name == "Bt_Editar") // Editar
+            {
+                ClassCliente itemSelecionado = (ClassCliente)dbGrid_Clientes.Rows[e.RowIndex].DataBoundItem;
+
+                Frm_ClientesManutencao frm = new Frm_ClientesManutencao(itemSelecionado.Id);
+                Hide();
+                frm.ShowDialog();
+                repository.Editar(frm.ClienteManutencao);
+                Show();
+                AtualizarGrid();
+            }
         }
     }
 }

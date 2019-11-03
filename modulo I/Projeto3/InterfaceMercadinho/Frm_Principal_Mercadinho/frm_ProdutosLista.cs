@@ -7,14 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mercadinho;
+using Mercadinho_INTERFACE;
 
 namespace Frm_Principal_Mercadinho
 {
     public partial class Frm_ListaProdutos : Form
     {
+
+        public RepositoryProduto repository{ get; set; }
+        public List<ClassProduto> Produtos { get; set; }
         public Frm_ListaProdutos()
         {
             InitializeComponent();
+            Initialize();
+        }
+
+        private void AtualizarGrid()
+        {
+            Produtos = repository.Obter().ToList();
+            dbGrid_Produtos.DataSource = null;
+            dbGrid_Produtos.DataSource = Produtos.OrderBy(a => a.DescricaoDoProduto).ToList();
+
+        }
+
+        public void Initialize()
+        {
+            Produtos = new List<ClassProduto>();
+            dbGrid_Produtos.AutoGenerateColumns = false;
+            AtualizarGrid();
+        }
+
+        private void Bt_Incluir_Click(object sender, EventArgs e)
+        {
+            frm_ProdutosManutencao frm = new frm_ProdutosManutencao(0);
+            Hide();
+            frm.ShowDialog();
+            repository.Inserir(frm.ProdutoManutencao);
+            Show();
+            AtualizarGrid();
         }
     }
 }
