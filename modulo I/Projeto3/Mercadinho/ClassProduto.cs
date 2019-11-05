@@ -12,8 +12,8 @@ namespace Mercadinho
         public string DescricaoDoProduto { get; set; }
 
         // relacionamento com a Estoque
-            public int EstoqueId { get; set; } 
-            public ClassEstoque Estoque { get; set; }
+       //     public int EstoqueId { get; set; } 
+        public ClassEstoque Estoque { get; set; }
 
         public decimal ValorDeCompra { get; set; }
         public int PercentualDeLucro { get; set; }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dbGrid_Clientes = new System.Windows.Forms.DataGridView();
+            this.bt_IncluirCliente = new System.Windows.Forms.Button();
             this.Nome_do_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_de_Nascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_de_Ultima_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bt_Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Bt_Apagar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.bt_IncluirCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dbGrid_Clientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +52,16 @@
             this.dbGrid_Clientes.Size = new System.Drawing.Size(744, 267);
             this.dbGrid_Clientes.TabIndex = 0;
             this.dbGrid_Clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DbGrid_Clientes_CellContentClick);
+            // 
+            // bt_IncluirCliente
+            // 
+            this.bt_IncluirCliente.Location = new System.Drawing.Point(599, 286);
+            this.bt_IncluirCliente.Name = "bt_IncluirCliente";
+            this.bt_IncluirCliente.Size = new System.Drawing.Size(156, 44);
+            this.bt_IncluirCliente.TabIndex = 1;
+            this.bt_IncluirCliente.Text = "Incluir Cliente";
+            this.bt_IncluirCliente.UseVisualStyleBackColor = true;
+            this.bt_IncluirCliente.Click += new System.EventHandler(this.Bt_IncluirCliente_Click);
             // 
             // Nome_do_Cliente
             // 
@@ -77,6 +87,7 @@
             this.Bt_Editar.HeaderText = "Editar";
             this.Bt_Editar.Name = "Bt_Editar";
             this.Bt_Editar.Text = "Editar";
+            this.Bt_Editar.UseColumnTextForButtonValue = true;
             // 
             // Bt_Apagar
             // 
@@ -84,16 +95,7 @@
             this.Bt_Apagar.Name = "Bt_Apagar";
             this.Bt_Apagar.Text = "Apagar";
             this.Bt_Apagar.ToolTipText = "Apagar";
-            // 
-            // bt_IncluirCliente
-            // 
-            this.bt_IncluirCliente.Location = new System.Drawing.Point(599, 286);
-            this.bt_IncluirCliente.Name = "bt_IncluirCliente";
-            this.bt_IncluirCliente.Size = new System.Drawing.Size(156, 44);
-            this.bt_IncluirCliente.TabIndex = 1;
-            this.bt_IncluirCliente.Text = "Incluir Cliente";
-            this.bt_IncluirCliente.UseVisualStyleBackColor = true;
-            this.bt_IncluirCliente.Click += new System.EventHandler(this.Bt_IncluirCliente_Click);
+            this.Bt_Apagar.UseColumnTextForButtonValue = true;
             // 
             // Frm_ListaClientes
             // 
@@ -112,11 +114,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dbGrid_Clientes;
+        private System.Windows.Forms.Button bt_IncluirCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome_do_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_de_Nascimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_de_Ultima_Compra;
         private System.Windows.Forms.DataGridViewButtonColumn Bt_Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Bt_Apagar;
-        private System.Windows.Forms.Button bt_IncluirCliente;
     }
 }

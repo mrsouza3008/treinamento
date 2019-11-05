@@ -12,8 +12,8 @@ namespace Mercadinho
         public int Id { get; set; }
 
         
-        public int IdDoProduto { get; set; }
-        //public virtual ClassProduto Produto { get; set; } // Link de Relacionamento
+        //public int IdDoProduto { get; set; }
+        public virtual ClassProduto Produto { get; set; } // Link de Relacionamento
         
         public decimal QtdeEstoque { get; set; }
         public decimal QtdeMinimoEstoque { get; set; }

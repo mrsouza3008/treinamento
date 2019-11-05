@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B56F2DBC-05D9-4C7D-8CD8-DA86A0AAE650}</ProjectGuid>
+    <ProjectGuid>{19E50E44-F49B-43FE-B49A-077729F00ADC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mercadinho</RootNamespace>
-    <AssemblyName>Mercadinho</AssemblyName>
+    <RootNamespace>Projeto2</RootNamespace>
+    <AssemblyName>Projeto2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -43,8 +43,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,53 +51,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frm_Vendas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Vendas.Designer.cs">
-      <DependentUpon>Frm_Vendas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911021111545_Projeto Mercadinho Inicial.cs" />
-    <Compile Include="Migrations\201911021111545_Projeto Mercadinho Inicial.designer.cs">
-      <DependentUpon>201911021111545_Projeto Mercadinho Inicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911021117274_Projeto Mercadinho Correcao.cs" />
-    <Compile Include="Migrations\201911021117274_Projeto Mercadinho Correcao.designer.cs">
-      <DependentUpon>201911021117274_Projeto Mercadinho Correcao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911021333451_Remocao de Campo de Ultima Compra do Cliente.cs" />
-    <Compile Include="Migrations\201911021333451_Remocao de Campo de Ultima Compra do Cliente.designer.cs">
-      <DependentUpon>201911021333451_Remocao de Campo de Ultima Compra do Cliente.cs</DependentUpon>
+    <Compile Include="Banco.cs" />
+    <Compile Include="BancoMap.cs" />
+    <Compile Include="BancoRepository.cs" />
+    <Compile Include="ClienteRepository.cs" />
+    <Compile Include="Conta.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="ClienteMap.cs" />
+    <Compile Include="ContaMap.cs" />
+    <Compile Include="ContaRepository.cs" />
+    <Compile Include="IContaRepository.cs" />
+    <Compile Include="IBaseRepository.cs" />
+    <Compile Include="IClienteRepository.cs" />
+    <Compile Include="Migrations\201910212156400_InitialCreate.cs" />
+    <Compile Include="Migrations\201910212156400_InitialCreate.designer.cs">
+      <DependentUpon>201910212156400_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="RepositoryCliente.cs" />
-    <Compile Include="RepositoryEstoque.cs" />
-    <Compile Include="RepositoryProduto.cs" />
-    <Compile Include="RepositoryVenda.cs" />
-    <Compile Include="TabelaBDCliente.cs" />
-    <Compile Include="ClassCliente.cs" />
-    <Compile Include="ClassEstoque.cs" />
-    <Compile Include="ClassProduto.cs" />
-    <Compile Include="ClassVenda.cs" />
-    <Compile Include="TabelaBDEstoque.cs" />
-    <Compile Include="MercadinhoContext.cs" />
+    <Compile Include="Projeto2Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TabelaBDProduto.cs" />
-    <Compile Include="TabelaBDVenda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911021111545_Projeto Mercadinho Inicial.resx">
-      <DependentUpon>201911021111545_Projeto Mercadinho Inicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911021117274_Projeto Mercadinho Correcao.resx">
-      <DependentUpon>201911021117274_Projeto Mercadinho Correcao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911021333451_Remocao de Campo de Ultima Compra do Cliente.resx">
-      <DependentUpon>201911021333451_Remocao de Campo de Ultima Compra do Cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910212156400_InitialCreate.resx">
+      <DependentUpon>201910212156400_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -72,6 +72,7 @@
             this.bt_Vendas.TabIndex = 3;
             this.bt_Vendas.Text = "Vendas";
             this.bt_Vendas.UseVisualStyleBackColor = true;
+            this.bt_Vendas.Click += new System.EventHandler(this.Bt_Vendas_Click);
             // 
             // ATelaPrincipal
             // 

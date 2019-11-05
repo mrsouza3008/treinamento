@@ -16,7 +16,7 @@ namespace Mercadinho_INTERFACE
     {
         public ClassCliente ClienteManutencao { get; set; }
 
-        public RepositoryCliente Repository { get; set; }
+        public RepositoryCliente Repository = new RepositoryCliente();
 
 
         public Frm_ClientesManutencao(int id)
@@ -56,11 +56,27 @@ namespace Mercadinho_INTERFACE
         {
             if (CadastroEhValido())
             {
-                ClienteManutencao = new ClassCliente
+                ClienteManutencao.NomeDoCliente = txt_NomeDoCliente.Text;
+                ClienteManutencao.DataDeNascimento = dt_DataDeNascimento.Value;
+
+                /* ClienteManutencao = new ClassCliente
                 {
                     NomeDoCliente = txt_NomeDoCliente.Text,
                     DataDeNascimento = dt_DataDeNascimento.Value
                 };
+                */
+
+
+                if (ClienteManutencao.Id == 0)
+                {
+
+                    Repository.Inserir(ClienteManutencao);
+                }
+                else
+                {         
+                    Repository.Editar(ClienteManutencao);
+                }
+
                 Close();
             }
             

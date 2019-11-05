@@ -35,6 +35,7 @@
             this.txt_PercentualDeLucro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Bt_Salvar = new System.Windows.Forms.Button();
+            this.ckBox_Ativo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -93,12 +94,24 @@
             this.Bt_Salvar.TabIndex = 6;
             this.Bt_Salvar.Text = "Salvar";
             this.Bt_Salvar.UseVisualStyleBackColor = true;
+            this.Bt_Salvar.Click += new System.EventHandler(this.Bt_Salvar_Click);
+            // 
+            // ckBox_Ativo
+            // 
+            this.ckBox_Ativo.AutoSize = true;
+            this.ckBox_Ativo.Location = new System.Drawing.Point(578, 13);
+            this.ckBox_Ativo.Name = "ckBox_Ativo";
+            this.ckBox_Ativo.Size = new System.Drawing.Size(58, 17);
+            this.ckBox_Ativo.TabIndex = 7;
+            this.ckBox_Ativo.Text = "ATIVO";
+            this.ckBox_Ativo.UseVisualStyleBackColor = true;
             // 
             // frm_ProdutosManutencao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ckBox_Ativo);
             this.Controls.Add(this.Bt_Salvar);
             this.Controls.Add(this.txt_PercentualDeLucro);
             this.Controls.Add(this.label3);
@@ -122,5 +135,6 @@
         private System.Windows.Forms.TextBox txt_PercentualDeLucro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Bt_Salvar;
+        private System.Windows.Forms.CheckBox ckBox_Ativo;
     }
 }

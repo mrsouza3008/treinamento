@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mercadinho;
 
 
 namespace Frm_Principal_Mercadinho
@@ -42,6 +43,12 @@ namespace Frm_Principal_Mercadinho
         private void Bt_Estoque_Click(object sender, EventArgs e)
         {
             Frm_ListaEstoque frm = new Frm_ListaEstoque();
+            AbrirForm(frm);
+        }
+
+        private void Bt_Vendas_Click(object sender, EventArgs e)
+        {
+            Frm_Vendas frm = new Frm_Vendas();
             AbrirForm(frm);
         }
     }

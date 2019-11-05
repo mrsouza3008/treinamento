@@ -46,7 +46,7 @@ namespace Frm_Principal_Mercadinho
             Frm_ClientesManutencao frm = new Frm_ClientesManutencao(0);
             Hide();
             frm.ShowDialog();
-            repository.Inserir(frm.ClienteManutencao);
+            //repository.Inserir(frm.ClienteManutencao);  // -- Agora esta Inserindo direto na frm_ClientesManutencao
             Show();
             AtualizarGrid();
         }
@@ -60,9 +60,18 @@ namespace Frm_Principal_Mercadinho
                 Frm_ClientesManutencao frm = new Frm_ClientesManutencao(itemSelecionado.Id);
                 Hide();
                 frm.ShowDialog();
-                repository.Editar(frm.ClienteManutencao);
+                // repository.Editar(frm.ClienteManutencao); // - Agora esta Editando direto na frm_ClientesManutencao
+                
                 Show();
                 AtualizarGrid();
+
+            }
+            if (dbGrid_Clientes.Columns[e.ColumnIndex].Name == "Bt_Apagar") // Editar
+            {
+                ClassCliente itemSelecionado = (ClassCliente)dbGrid_Clientes.Rows[e.RowIndex].DataBoundItem;
+                repository.Apagar(itemSelecionado.Id);
+                AtualizarGrid();
+    
             }
         }
     }

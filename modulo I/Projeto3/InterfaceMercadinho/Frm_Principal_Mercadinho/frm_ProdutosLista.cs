@@ -15,7 +15,7 @@ namespace Frm_Principal_Mercadinho
     public partial class Frm_ListaProdutos : Form
     {
 
-        public RepositoryProduto repository{ get; set; }
+        public RepositoryProduto repository = new RepositoryProduto();
         public List<ClassProduto> Produtos { get; set; }
         public Frm_ListaProdutos()
         {
@@ -43,9 +43,33 @@ namespace Frm_Principal_Mercadinho
             frm_ProdutosManutencao frm = new frm_ProdutosManutencao(0);
             Hide();
             frm.ShowDialog();
-            repository.Inserir(frm.ProdutoManutencao);
+            //repository.Inserir(frm.ProdutoManutencao);
             Show();
             AtualizarGrid();
+        }
+
+        private void DbGrid_Produtos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dbGrid_Produtos.Columns[e.ColumnIndex].Name == "Bt_Editar") // Editar
+            {
+                ClassProduto itemSelecionado = (ClassProduto)dbGrid_Produtos.Rows[e.RowIndex].DataBoundItem;
+
+                frm_ProdutosManutencao frm = new frm_ProdutosManutencao(itemSelecionado.Id);
+                Hide();
+                frm.ShowDialog();
+          
+                Show();
+                AtualizarGrid();
+
+            }
+            if (dbGrid_Produtos.Columns[e.ColumnIndex].Name == "Bt_Apagar") // Editar
+            {
+                ClassProduto itemSelecionado = (ClassProduto)dbGrid_Produtos.Rows[e.RowIndex].DataBoundItem;
+
+                repository.Apagar(itemSelecionado.Id);
+                AtualizarGrid();
+
+            }
         }
     }
 }
