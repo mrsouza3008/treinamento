@@ -7,13 +7,13 @@ namespace Mercadinho.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class ProjetoMercadinhoCorrecao : IMigrationMetadata
+    public sealed partial class acertodetabelas : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ProjetoMercadinhoCorrecao));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(acertodetabelas));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911021117274_Projeto Mercadinho Correcao"; }
+            get { return "201911121729310_acerto de tabelas"; }
         }
         
         string IMigrationMetadata.Source

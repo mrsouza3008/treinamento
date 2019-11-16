@@ -10,10 +10,20 @@ namespace Mercadinho
     {
         public int Id { get; set; }
         public int IdDoCliente { get; set; }
-        public virtual ClassCliente Cliente { get; set; } // Link de Relacionamento
+
+        public ClassCliente Cliente { get; set; }
         public int IdDoProduto { get; set; }
-        public virtual ClassProduto Produto { get; set; } // Link de Relacionamento
+
+        public string NomeDoCliente => Cliente?.NomeDoCliente ?? "";
+
+        public ClassProduto Produto { get; set; }
+        public string DescricaoDoProduto => Produto?.DescricaoDoProduto?? "";  
+        
         public decimal QtdeVendida { get; set; }
+
+        public decimal ValorDaVenda { get; set; }
+
+        public DateTime DataDaVenda { get; set; }
 
 
 

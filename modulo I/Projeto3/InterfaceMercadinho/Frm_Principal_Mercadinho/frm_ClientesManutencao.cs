@@ -16,12 +16,13 @@ namespace Mercadinho_INTERFACE
     {
         public ClassCliente ClienteManutencao { get; set; }
 
-        public RepositoryCliente Repository = new RepositoryCliente();
+        public RepositoryCliente Repository { get; private set; }
 
 
-        public Frm_ClientesManutencao(int id)
+        public Frm_ClientesManutencao(int id, RepositoryCliente RepCliente)
         {
             InitializeComponent();
+            Repository = RepCliente;
             Obter(id);
         }
 

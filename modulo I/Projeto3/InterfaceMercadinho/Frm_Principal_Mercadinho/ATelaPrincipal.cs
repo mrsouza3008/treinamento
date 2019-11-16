@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mercadinho;
+using Mercadinho_INTERFACE;
 
 
 namespace Frm_Principal_Mercadinho
@@ -48,7 +49,32 @@ namespace Frm_Principal_Mercadinho
 
         private void Bt_Vendas_Click(object sender, EventArgs e)
         {
-            Frm_Vendas frm = new Frm_Vendas();
+            frm_Vendas frm = new frm_Vendas();
+            AbrirForm(frm);
+        }
+
+        private void Bt_Compras_Click(object sender, EventArgs e)
+        {
+            Frm_CompraProdutoManutencao frm = new Frm_CompraProdutoManutencao();
+            AbrirForm(frm);
+
+        }
+
+        private void Bt_Fornecedores_Click(object sender, EventArgs e)
+        {
+            Frm_FornecedorLista frm = new Frm_FornecedorLista();
+            AbrirForm(frm);
+        }
+
+        private void Bt_EditarCompras_Click(object sender, EventArgs e)
+        {
+            Frm_CompraProdutoLista frm = new Frm_CompraProdutoLista();
+            AbrirForm(frm);
+        }
+
+        private void Bt_EditarCompras_Click_1(object sender, EventArgs e)
+        {
+            Frm_CompraProdutoLista frm = new Frm_CompraProdutoLista();
             AbrirForm(frm);
         }
     }

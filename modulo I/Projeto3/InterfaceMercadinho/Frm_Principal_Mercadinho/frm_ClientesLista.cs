@@ -43,7 +43,7 @@ namespace Frm_Principal_Mercadinho
 
         private void Bt_IncluirCliente_Click(object sender, EventArgs e)
         {
-            Frm_ClientesManutencao frm = new Frm_ClientesManutencao(0);
+            Frm_ClientesManutencao frm = new Frm_ClientesManutencao(0, repository);
             Hide();
             frm.ShowDialog();
             //repository.Inserir(frm.ClienteManutencao);  // -- Agora esta Inserindo direto na frm_ClientesManutencao
@@ -57,7 +57,7 @@ namespace Frm_Principal_Mercadinho
             {
                 ClassCliente itemSelecionado = (ClassCliente)dbGrid_Clientes.Rows[e.RowIndex].DataBoundItem;
 
-                Frm_ClientesManutencao frm = new Frm_ClientesManutencao(itemSelecionado.Id);
+                Frm_ClientesManutencao frm = new Frm_ClientesManutencao(itemSelecionado.Id, repository);
                 Hide();
                 frm.ShowDialog();
                 // repository.Editar(frm.ClienteManutencao); // - Agora esta Editando direto na frm_ClientesManutencao

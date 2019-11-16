@@ -89,11 +89,35 @@
     <Compile Include="frm_ClientesLista.Designer.cs">
       <DependentUpon>frm_ClientesLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_CompraProdutoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CompraProdutoLista.Designer.cs">
+      <DependentUpon>Frm_CompraProdutoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_CompraProdutoManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CompraProdutoManutencao.Designer.cs">
+      <DependentUpon>Frm_CompraProdutoManutencao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_EstoqueLista.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_EstoqueLista.Designer.cs">
       <DependentUpon>frm_EstoqueLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_FornecedorLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_FornecedorLista.Designer.cs">
+      <DependentUpon>Frm_FornecedorLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_FornecedorManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_FornecedorManutencao.Designer.cs">
+      <DependentUpon>Frm_FornecedorManutencao.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ProdutosLista.cs">
       <SubType>Form</SubType>
@@ -124,11 +148,29 @@
     <EmbeddedResource Include="frm_ClientesManutencao.resx">
       <DependentUpon>frm_ClientesManutencao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CompraProdutoLista.resx">
+      <DependentUpon>Frm_CompraProdutoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CompraProdutoManutencao.resx">
+      <DependentUpon>Frm_CompraProdutoManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_EstoqueLista.resx">
+      <DependentUpon>frm_EstoqueLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_FornecedorLista.resx">
+      <DependentUpon>Frm_FornecedorLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_FornecedorManutencao.resx">
+      <DependentUpon>Frm_FornecedorManutencao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_ProdutosLista.resx">
       <DependentUpon>frm_ProdutosLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ProdutosManutencao.resx">
       <DependentUpon>frm_ProdutosManutencao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Vendas.resx">
+      <DependentUpon>frm_Vendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

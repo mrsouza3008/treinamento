@@ -18,6 +18,10 @@ namespace Mercadinho
         public DbSet<ClassProduto> Produtos_DB { get; set; }
         public DbSet<ClassEstoque> Estoques_DB { get; set; }
         public DbSet<ClassVenda> Vendas_DB { get; set; }
+        public DbSet<ClassFornecedor> Fornecedor_DB {get; set;}
+        public DbSet<ClassCompra> Compras_DB { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -51,6 +55,16 @@ namespace Mercadinho
                         .HasRequired<ClassCliente>(a => a.Cliente)
                         .WithMany(a => a.Vendas)
                         .HasForeignKey<int>(a => a.IdDoCliente);
+
+            modelBuilder.Entity<ClassCompra>()
+                        .HasRequired<ClassProduto>(a => a.Produto)
+                        .WithMany(a => a.Compras)
+                        .HasForeignKey<int>(a => a.ProdutoId);
+
+            modelBuilder.Entity<ClassCompra>()
+                        .HasRequired<ClassFornecedor>(a => a.Fornecedor)
+                        .WithMany(a => a.Compras)
+                        .HasForeignKey<int>(a => a.FornecedorId);
 
 
             base.OnModelCreating(modelBuilder);

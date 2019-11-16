@@ -36,6 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Bt_Salvar = new System.Windows.Forms.Button();
             this.ckBox_Ativo = new System.Windows.Forms.CheckBox();
+            this.txt_ValorDeVenda = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -106,11 +108,29 @@
             this.ckBox_Ativo.Text = "ATIVO";
             this.ckBox_Ativo.UseVisualStyleBackColor = true;
             // 
+            // txt_ValorDeVenda
+            // 
+            this.txt_ValorDeVenda.Location = new System.Drawing.Point(363, 85);
+            this.txt_ValorDeVenda.Name = "txt_ValorDeVenda";
+            this.txt_ValorDeVenda.Size = new System.Drawing.Size(90, 20);
+            this.txt_ValorDeVenda.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(272, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Valor de Venda";
+            // 
             // frm_ProdutosManutencao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_ValorDeVenda);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.ckBox_Ativo);
             this.Controls.Add(this.Bt_Salvar);
             this.Controls.Add(this.txt_PercentualDeLucro);
@@ -136,5 +156,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Bt_Salvar;
         private System.Windows.Forms.CheckBox ckBox_Ativo;
+        private System.Windows.Forms.TextBox txt_ValorDeVenda;
+        private System.Windows.Forms.Label label4;
     }
 }

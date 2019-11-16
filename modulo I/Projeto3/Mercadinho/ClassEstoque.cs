@@ -13,13 +13,13 @@ namespace Mercadinho
 
         
         //public int IdDoProduto { get; set; }
-        public virtual ClassProduto Produto { get; set; } // Link de Relacionamento
-        
+        public  ClassProduto Produto { get; set; } // Link de Relacionamento
+
+        public string NomeDoProduto => Produto.DescricaoDoProduto;
         public decimal QtdeEstoque { get; set; }
         public decimal QtdeMinimoEstoque { get; set; }
-        public char Ativo { get; set;}
+        public char Ativo { get; set;} 
 
-       
-
+        
     }
 }

@@ -68,13 +68,13 @@
             this.Nome_do_Cliente.DataPropertyName = "NomeDoCliente";
             this.Nome_do_Cliente.HeaderText = "Nome";
             this.Nome_do_Cliente.Name = "Nome_do_Cliente";
+            this.Nome_do_Cliente.Width = 300;
             // 
             // Data_de_Nascimento
             // 
             this.Data_de_Nascimento.DataPropertyName = "DataDeNascimento";
             this.Data_de_Nascimento.HeaderText = "Data de Nascimento";
             this.Data_de_Nascimento.Name = "Data_de_Nascimento";
-            this.Data_de_Nascimento.Width = 300;
             // 
             // Data_de_Ultima_Compra
             // 

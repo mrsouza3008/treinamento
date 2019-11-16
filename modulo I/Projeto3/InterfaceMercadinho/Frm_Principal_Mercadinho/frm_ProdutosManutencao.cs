@@ -15,11 +15,12 @@ namespace Mercadinho_INTERFACE
     {
         public ClassProduto ProdutoManutencao { get; set; }
 
-        public RepositoryProduto Repository = new RepositoryProduto();
+        public RepositoryProduto Repository { get; private set; }
 
-        public frm_ProdutosManutencao(int id)
+        public frm_ProdutosManutencao(int id, RepositoryProduto RepProduto)
         {
             InitializeComponent();
+            Repository = RepProduto;
             Obter(id);
         }
 
@@ -32,10 +33,25 @@ namespace Mercadinho_INTERFACE
                 ProdutoManutencao = new ClassProduto();
             }
             else //Editar
-            {
+            {   
+
                 txt_DescricaoDoProduto.Text = ProdutoManutencao.DescricaoDoProduto;
                 txt_ValorDeCompra.Text = ProdutoManutencao.ValorDeCompra.ToString();
                 txt_PercentualDeLucro.Text = ProdutoManutencao.PercentualDeLucro.ToString();
+                txt_ValorDeVenda.Text = ProdutoManutencao.PrecoDeVenda.ToString();
+                ckBox_Ativo.Checked = ProdutoManutencao.Ativo == "S" ? true : false;
+
+                /*
+                if (ProdutoManutencao.Ativo == "S")
+                {
+                    ckBox_Ativo.Checked = true;
+                }
+                else
+                {
+                    ckBox_Ativo.Checked = false;
+                }
+                */
+
             }
         }
 
@@ -53,16 +69,12 @@ namespace Mercadinho_INTERFACE
                 ativo = "N";
             }*/
 
-            ProdutoManutencao = new ClassProduto
-            {
-                DescricaoDoProduto = txt_DescricaoDoProduto.Text,
-                ValorDeCompra = Convert.ToInt32(txt_ValorDeCompra.Text),
-                PercentualDeLucro = Convert.ToInt32(txt_PercentualDeLucro.Text),
-                Ativo = ativo,
-                QtdeEstoque = 0,
-                QtdeMinima = 0
-
-            };
+            
+            ProdutoManutencao.DescricaoDoProduto = txt_DescricaoDoProduto.Text;
+            ProdutoManutencao.ValorDeCompra = Convert.ToDecimal(txt_ValorDeCompra.Text);
+            ProdutoManutencao.PercentualDeLucro = Convert.ToInt32(txt_PercentualDeLucro.Text);
+            ProdutoManutencao.Ativo = ativo;
+            
 
             if (ProdutoManutencao.Id == 0)
             {
@@ -72,6 +84,7 @@ namespace Mercadinho_INTERFACE
             {
                 Repository.Editar(ProdutoManutencao);
             }
+            Close();
         }
     }
 }

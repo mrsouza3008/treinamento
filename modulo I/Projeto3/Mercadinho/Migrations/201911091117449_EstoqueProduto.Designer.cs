@@ -7,13 +7,13 @@ namespace Mercadinho.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class RemocaodeCampodeUltimaCompradoCliente : IMigrationMetadata
+    public sealed partial class EstoqueProduto : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemocaodeCampodeUltimaCompradoCliente));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(EstoqueProduto));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911021333451_Remocao de Campo de Ultima Compra do Cliente"; }
+            get { return "201911091117449_EstoqueProduto"; }
         }
         
         string IMigrationMetadata.Source

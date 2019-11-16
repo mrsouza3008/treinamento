@@ -40,7 +40,7 @@ namespace Frm_Principal_Mercadinho
 
         private void Bt_Incluir_Click(object sender, EventArgs e)
         {
-            frm_ProdutosManutencao frm = new frm_ProdutosManutencao(0);
+            frm_ProdutosManutencao frm = new frm_ProdutosManutencao(0, repository);
             Hide();
             frm.ShowDialog();
             //repository.Inserir(frm.ProdutoManutencao);
@@ -54,7 +54,8 @@ namespace Frm_Principal_Mercadinho
             {
                 ClassProduto itemSelecionado = (ClassProduto)dbGrid_Produtos.Rows[e.RowIndex].DataBoundItem;
 
-                frm_ProdutosManutencao frm = new frm_ProdutosManutencao(itemSelecionado.Id);
+                frm_ProdutosManutencao frm = new frm_ProdutosManutencao(itemSelecionado.Id, repository);
+               
                 Hide();
                 frm.ShowDialog();
           

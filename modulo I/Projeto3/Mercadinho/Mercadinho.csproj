@@ -53,27 +53,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frm_Vendas.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ClassCompra.cs" />
+    <Compile Include="ClassFornecedor.cs" />
+    <Compile Include="Migrations\201911091117449_EstoqueProduto.cs" />
+    <Compile Include="Migrations\201911091117449_EstoqueProduto.designer.cs">
+      <DependentUpon>201911091117449_EstoqueProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Vendas.Designer.cs">
-      <DependentUpon>Frm_Vendas.cs</DependentUpon>
+    <Compile Include="Migrations\201911091322428_alteracao campo DatadeRecebimento Int para Date.cs" />
+    <Compile Include="Migrations\201911091322428_alteracao campo DatadeRecebimento Int para Date.designer.cs">
+      <DependentUpon>201911091322428_alteracao campo DatadeRecebimento Int para Date.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911021111545_Projeto Mercadinho Inicial.cs" />
-    <Compile Include="Migrations\201911021111545_Projeto Mercadinho Inicial.designer.cs">
-      <DependentUpon>201911021111545_Projeto Mercadinho Inicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911021117274_Projeto Mercadinho Correcao.cs" />
-    <Compile Include="Migrations\201911021117274_Projeto Mercadinho Correcao.designer.cs">
-      <DependentUpon>201911021117274_Projeto Mercadinho Correcao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911021333451_Remocao de Campo de Ultima Compra do Cliente.cs" />
-    <Compile Include="Migrations\201911021333451_Remocao de Campo de Ultima Compra do Cliente.designer.cs">
-      <DependentUpon>201911021333451_Remocao de Campo de Ultima Compra do Cliente.cs</DependentUpon>
+    <Compile Include="Migrations\201911121729310_acerto de tabelas.cs" />
+    <Compile Include="Migrations\201911121729310_acerto de tabelas.designer.cs">
+      <DependentUpon>201911121729310_acerto de tabelas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RepositoryCliente.cs" />
+    <Compile Include="RepositoryCompra.cs" />
     <Compile Include="RepositoryEstoque.cs" />
+    <Compile Include="RepositoryFornecedor.cs" />
     <Compile Include="RepositoryProduto.cs" />
     <Compile Include="RepositoryVenda.cs" />
     <Compile Include="TabelaBDCliente.cs" />
@@ -81,9 +79,11 @@
     <Compile Include="ClassEstoque.cs" />
     <Compile Include="ClassProduto.cs" />
     <Compile Include="ClassVenda.cs" />
+    <Compile Include="TabelaBDCompras.cs" />
     <Compile Include="TabelaBDEstoque.cs" />
     <Compile Include="MercadinhoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabelaBDFornecedor.cs" />
     <Compile Include="TabelaBDProduto.cs" />
     <Compile Include="TabelaBDVenda.cs" />
   </ItemGroup>
@@ -92,14 +92,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911021111545_Projeto Mercadinho Inicial.resx">
-      <DependentUpon>201911021111545_Projeto Mercadinho Inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911091117449_EstoqueProduto.resx">
+      <DependentUpon>201911091117449_EstoqueProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911021117274_Projeto Mercadinho Correcao.resx">
-      <DependentUpon>201911021117274_Projeto Mercadinho Correcao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911091322428_alteracao campo DatadeRecebimento Int para Date.resx">
+      <DependentUpon>201911091322428_alteracao campo DatadeRecebimento Int para Date.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911021333451_Remocao de Campo de Ultima Compra do Cliente.resx">
-      <DependentUpon>201911021333451_Remocao de Campo de Ultima Compra do Cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911121729310_acerto de tabelas.resx">
+      <DependentUpon>201911121729310_acerto de tabelas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

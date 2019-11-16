@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ProjetoMercadinhoInicial : DbMigration
+    public partial class EstoqueProduto : DbMigration
     {
         public override void Up()
         {
@@ -14,7 +14,6 @@
                         Id = c.Int(nullable: false, identity: true),
                         NomeDoCliente = c.String(nullable: false, maxLength: 60, unicode: false),
                         DataDeNascimento = c.DateTime(nullable: false),
-                        DataDeUltimaCompra = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -29,49 +28,78 @@
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.CLIENTES", t => t.IdDoCliente, cascadeDelete: true)
-                .ForeignKey("dbo.ClassProdutoes", t => t.IdDoProduto, cascadeDelete: true)
+                .ForeignKey("dbo.PRODUTOS", t => t.IdDoProduto, cascadeDelete: true)
                 .Index(t => t.IdDoCliente)
                 .Index(t => t.IdDoProduto);
             
             CreateTable(
-                "dbo.ClassProdutoes",
+                "dbo.PRODUTOS",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        DescricaoDoProduto = c.String(maxLength: 8000, unicode: false),
-                        EstoqueId = c.Int(nullable: false),
+                        DescricaoDoProduto = c.String(nullable: false, maxLength: 80, unicode: false),
                         ValorDeCompra = c.Decimal(nullable: false, precision: 18, scale: 2),
                         PercentualDeLucro = c.Int(nullable: false),
-                        QtdeEstoque = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        QtdeMinima = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Ativo = c.String(nullable: false, maxLength: 1, unicode: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.ClassCompras",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ProdutoId = c.Int(nullable: false),
+                        FornecedorId = c.Int(nullable: false),
+                        QtdeDeCompra = c.Int(nullable: false),
+                        DataDeRecebimento = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ESTOQUE", t => t.EstoqueId, cascadeDelete: true)
-                .Index(t => t.EstoqueId);
+                .ForeignKey("dbo.ClassFornecedors", t => t.FornecedorId, cascadeDelete: true)
+                .ForeignKey("dbo.PRODUTOS", t => t.ProdutoId, cascadeDelete: true)
+                .Index(t => t.ProdutoId)
+                .Index(t => t.FornecedorId);
+            
+            CreateTable(
+                "dbo.ClassFornecedors",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        NomeDoFornecedor = c.String(maxLength: 8000, unicode: false),
+                        Ativo = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.ESTOQUE",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        IdDoProduto = c.Int(nullable: false),
+                        Id = c.Int(nullable: false),
                         QtdeEstoque = c.Decimal(nullable: false, precision: 18, scale: 2),
                         QtdeMinimoEstoque = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.PRODUTOS", t => t.Id)
+                .Index(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.VENDAS", "IdDoProduto", "dbo.ClassProdutoes");
-            DropForeignKey("dbo.ClassProdutoes", "EstoqueId", "dbo.ESTOQUE");
+            DropForeignKey("dbo.VENDAS", "IdDoProduto", "dbo.PRODUTOS");
+            DropForeignKey("dbo.ESTOQUE", "Id", "dbo.PRODUTOS");
+            DropForeignKey("dbo.ClassCompras", "ProdutoId", "dbo.PRODUTOS");
+            DropForeignKey("dbo.ClassCompras", "FornecedorId", "dbo.ClassFornecedors");
             DropForeignKey("dbo.VENDAS", "IdDoCliente", "dbo.CLIENTES");
-            DropIndex("dbo.ClassProdutoes", new[] { "EstoqueId" });
+            DropIndex("dbo.ESTOQUE", new[] { "Id" });
+            DropIndex("dbo.ClassCompras", new[] { "FornecedorId" });
+            DropIndex("dbo.ClassCompras", new[] { "ProdutoId" });
             DropIndex("dbo.VENDAS", new[] { "IdDoProduto" });
             DropIndex("dbo.VENDAS", new[] { "IdDoCliente" });
             DropTable("dbo.ESTOQUE");
-            DropTable("dbo.ClassProdutoes");
+            DropTable("dbo.ClassFornecedors");
+            DropTable("dbo.ClassCompras");
+            DropTable("dbo.PRODUTOS");
             DropTable("dbo.VENDAS");
             DropTable("dbo.CLIENTES");
         }

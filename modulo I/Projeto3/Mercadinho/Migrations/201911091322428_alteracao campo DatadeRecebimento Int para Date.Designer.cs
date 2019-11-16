@@ -7,13 +7,13 @@ namespace Mercadinho.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class ProjetoMercadinhoInicial : IMigrationMetadata
+    public sealed partial class alteracaocampoDatadeRecebimentoIntparaDate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ProjetoMercadinhoInicial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(alteracaocampoDatadeRecebimentoIntparaDate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911021111545_Projeto Mercadinho Inicial"; }
+            get { return "201911091322428_alteracao campo DatadeRecebimento Int para Date"; }
         }
         
         string IMigrationMetadata.Source

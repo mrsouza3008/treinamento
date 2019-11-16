@@ -23,12 +23,12 @@ namespace Mercadinho
 
         public ClassProduto Obter(int id)
         {
-            return Context.Produtos_DB.Where(a => a.Id == id).FirstOrDefault();
+            return Context.Produtos_DB.Include("Estoque").Where(a => a.Id == id).FirstOrDefault();
         }
 
         public IEnumerable<ClassProduto> Obter() // Lista
         {
-            return Context.Produtos_DB.ToList();
+            return Context.Produtos_DB.Include("Estoque").ToList();
         }
 
         public void Editar(ClassProduto produto)

@@ -32,6 +32,9 @@
             this.bt_Produtos = new System.Windows.Forms.Button();
             this.bt_Estoque = new System.Windows.Forms.Button();
             this.bt_Vendas = new System.Windows.Forms.Button();
+            this.bt_Compras = new System.Windows.Forms.Button();
+            this.bt_Fornecedores = new System.Windows.Forms.Button();
+            this.bt_EditarCompras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_Clientes
@@ -46,7 +49,7 @@
             // 
             // bt_Produtos
             // 
-            this.bt_Produtos.Location = new System.Drawing.Point(29, 80);
+            this.bt_Produtos.Location = new System.Drawing.Point(193, 12);
             this.bt_Produtos.Name = "bt_Produtos";
             this.bt_Produtos.Size = new System.Drawing.Size(158, 62);
             this.bt_Produtos.TabIndex = 1;
@@ -56,7 +59,7 @@
             // 
             // bt_Estoque
             // 
-            this.bt_Estoque.Location = new System.Drawing.Point(29, 148);
+            this.bt_Estoque.Location = new System.Drawing.Point(29, 147);
             this.bt_Estoque.Name = "bt_Estoque";
             this.bt_Estoque.Size = new System.Drawing.Size(158, 62);
             this.bt_Estoque.TabIndex = 2;
@@ -66,7 +69,7 @@
             // 
             // bt_Vendas
             // 
-            this.bt_Vendas.Location = new System.Drawing.Point(29, 216);
+            this.bt_Vendas.Location = new System.Drawing.Point(29, 283);
             this.bt_Vendas.Name = "bt_Vendas";
             this.bt_Vendas.Size = new System.Drawing.Size(158, 62);
             this.bt_Vendas.TabIndex = 3;
@@ -74,11 +77,44 @@
             this.bt_Vendas.UseVisualStyleBackColor = true;
             this.bt_Vendas.Click += new System.EventHandler(this.Bt_Vendas_Click);
             // 
+            // bt_Compras
+            // 
+            this.bt_Compras.Location = new System.Drawing.Point(29, 215);
+            this.bt_Compras.Name = "bt_Compras";
+            this.bt_Compras.Size = new System.Drawing.Size(158, 62);
+            this.bt_Compras.TabIndex = 4;
+            this.bt_Compras.Text = "Compras";
+            this.bt_Compras.UseVisualStyleBackColor = true;
+            this.bt_Compras.Click += new System.EventHandler(this.Bt_Compras_Click);
+            // 
+            // bt_Fornecedores
+            // 
+            this.bt_Fornecedores.Location = new System.Drawing.Point(357, 12);
+            this.bt_Fornecedores.Name = "bt_Fornecedores";
+            this.bt_Fornecedores.Size = new System.Drawing.Size(158, 62);
+            this.bt_Fornecedores.TabIndex = 5;
+            this.bt_Fornecedores.Text = "Cadastro de Fornecedores";
+            this.bt_Fornecedores.UseVisualStyleBackColor = true;
+            this.bt_Fornecedores.Click += new System.EventHandler(this.Bt_Fornecedores_Click);
+            // 
+            // bt_EditarCompras
+            // 
+            this.bt_EditarCompras.Location = new System.Drawing.Point(193, 215);
+            this.bt_EditarCompras.Name = "bt_EditarCompras";
+            this.bt_EditarCompras.Size = new System.Drawing.Size(158, 62);
+            this.bt_EditarCompras.TabIndex = 6;
+            this.bt_EditarCompras.Text = "Editar Compras";
+            this.bt_EditarCompras.UseVisualStyleBackColor = true;
+            this.bt_EditarCompras.Click += new System.EventHandler(this.Bt_EditarCompras_Click_1);
+            // 
             // ATelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 308);
+            this.ClientSize = new System.Drawing.Size(641, 399);
+            this.Controls.Add(this.bt_EditarCompras);
+            this.Controls.Add(this.bt_Fornecedores);
+            this.Controls.Add(this.bt_Compras);
             this.Controls.Add(this.bt_Vendas);
             this.Controls.Add(this.bt_Estoque);
             this.Controls.Add(this.bt_Produtos);
@@ -95,6 +131,9 @@
         private System.Windows.Forms.Button bt_Produtos;
         private System.Windows.Forms.Button bt_Estoque;
         private System.Windows.Forms.Button bt_Vendas;
+        private System.Windows.Forms.Button bt_Compras;
+        private System.Windows.Forms.Button bt_Fornecedores;
+        private System.Windows.Forms.Button bt_EditarCompras;
     }
 }
 

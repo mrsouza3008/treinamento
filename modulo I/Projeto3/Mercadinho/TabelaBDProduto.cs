@@ -19,10 +19,10 @@ namespace Mercadinho
             Property(a => a.ValorDeCompra).IsRequired();
             Property(a => a.PercentualDeLucro).IsRequired();
             Property(a => a.Ativo).IsRequired().HasMaxLength(1);
-
+            HasOptional(x => x.Estoque).WithRequired(x => x.Produto);
             //  --------------    Parte da Classe Estoque que não estarei mais usando ------------------
-            Property(a => a.QtdeEstoque);
-            Property(a => a.QtdeMinima);
+            // Property(a => a.QtdeEstoque);
+            // Property(a => a.QtdeMinima);
             //-----------------------------------------------------------------------------------------
         }
     }
