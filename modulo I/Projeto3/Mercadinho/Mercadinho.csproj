@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201911121729310_acerto de tabelas.designer.cs">
       <DependentUpon>201911121729310_acerto de tabelas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911161055592_Correcado Contexto.cs" />
+    <Compile Include="Migrations\201911161055592_Correcado Contexto.designer.cs">
+      <DependentUpon>201911161055592_Correcado Contexto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RepositoryCliente.cs" />
     <Compile Include="RepositoryCompra.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911121729310_acerto de tabelas.resx">
       <DependentUpon>201911121729310_acerto de tabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911161055592_Correcado Contexto.resx">
+      <DependentUpon>201911161055592_Correcado Contexto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -35,6 +35,7 @@
             this.bt_Compras = new System.Windows.Forms.Button();
             this.bt_Fornecedores = new System.Windows.Forms.Button();
             this.bt_EditarCompras = new System.Windows.Forms.Button();
+            this.bt_EditarVendas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bt_Clientes
@@ -103,15 +104,26 @@
             this.bt_EditarCompras.Name = "bt_EditarCompras";
             this.bt_EditarCompras.Size = new System.Drawing.Size(158, 62);
             this.bt_EditarCompras.TabIndex = 6;
-            this.bt_EditarCompras.Text = "Editar Compras";
+            this.bt_EditarCompras.Text = "Lista de  Compras";
             this.bt_EditarCompras.UseVisualStyleBackColor = true;
             this.bt_EditarCompras.Click += new System.EventHandler(this.Bt_EditarCompras_Click_1);
+            // 
+            // bt_EditarVendas
+            // 
+            this.bt_EditarVendas.Location = new System.Drawing.Point(193, 283);
+            this.bt_EditarVendas.Name = "bt_EditarVendas";
+            this.bt_EditarVendas.Size = new System.Drawing.Size(158, 62);
+            this.bt_EditarVendas.TabIndex = 7;
+            this.bt_EditarVendas.Text = "Lista de Vendas";
+            this.bt_EditarVendas.UseVisualStyleBackColor = true;
+            this.bt_EditarVendas.Click += new System.EventHandler(this.Bt_EditarVendas_Click);
             // 
             // ATelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 399);
+            this.Controls.Add(this.bt_EditarVendas);
             this.Controls.Add(this.bt_EditarCompras);
             this.Controls.Add(this.bt_Fornecedores);
             this.Controls.Add(this.bt_Compras);
@@ -134,6 +146,7 @@
         private System.Windows.Forms.Button bt_Compras;
         private System.Windows.Forms.Button bt_Fornecedores;
         private System.Windows.Forms.Button bt_EditarCompras;
+        private System.Windows.Forms.Button bt_EditarVendas;
     }
 }
 

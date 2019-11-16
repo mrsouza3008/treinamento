@@ -23,6 +23,13 @@ namespace Frm_Principal_Mercadinho
         public RepositoryProduto produtoRepository = new RepositoryProduto();
         public List<ClassProduto> Produtos { get; set; }
 
+        public RepositoryEstoque estoqueRepository = new RepositoryEstoque();
+
+        public RepositoryVenda vendaRepository = new RepositoryVenda();
+        public ClassVenda vendaManutencao { get; set; }
+        public ClassEstoque estoqueManutencao { get; set; }
+
+
         public void Initialize()
         {
             Produtos = new List<ClassProduto>();
@@ -47,6 +54,40 @@ namespace Frm_Principal_Mercadinho
         private void Label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void Bt_AdicionarProduto_Click(object sender, EventArgs e)
+        {
+            ClassVenda venda = new ClassVenda();
+            venda.IdDoCliente = Convert.ToInt32(cBox_Cliente.SelectedValue);
+            venda.IdDoProduto = Convert.ToInt32(cBox_Produto.SelectedValue);
+            venda.QtdeVendida = Convert.ToInt32(txt_Qtde.Text);
+            venda.DataDaVenda = DateTime.Now;
+            
+            ClassEstoque estoque;
+            estoque = estoqueRepository.Obter(venda.IdDoProduto);
+
+            ClassProduto produtovendido;
+            produtovendido = produtoRepository.Obter(venda.IdDoProduto);
+
+            int ValorDaVenda;
+            ValorDaVenda = Convert.ToInt32(venda.QtdeVendida * produtovendido.PrecoDeVenda);
+
+            txt_TotalDoProduto.Text = produtovendido.PrecoDeVenda.ToString();
+            txt_TotalDeVenda.Text = ValorDaVenda.ToString();
+
+            venda.ValorDaVenda = Convert.ToInt32(txt_TotalDeVenda.Text);
+
+            vendaManutencao = venda;
+            estoqueManutencao = estoque;
+
+        }
+
+        private void Bt_Efetivar_Click(object sender, EventArgs e)
+        {
+            estoqueRepository.RealizarVenda(estoqueManutencao, vendaManutencao);
+            vendaRepository.Inserir(vendaManutencao);
+            Close();
         }
     }
 }

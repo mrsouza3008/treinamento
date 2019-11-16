@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Mercadinho
 {
@@ -80,6 +81,19 @@ namespace Mercadinho
 
             }
             
+        }
+
+        public void RealizarVenda(ClassEstoque estoque, ClassVenda vendido)
+        {
+            if (estoque.QtdeEstoque < vendido.QtdeVendida)
+            {
+                MessageBox.Show("Estoque Insuficiente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                estoque.QtdeEstoque = estoque.QtdeEstoque - vendido.QtdeVendida;
+                Editar(estoque);
+            }
         }
 
     }

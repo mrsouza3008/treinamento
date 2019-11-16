@@ -28,33 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGrid_Compras = new System.Windows.Forms.DataGridView();
+            this.Bt_Incluir = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProdutoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FornecedorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataDeRecebimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Bt_Incluir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bt_Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dGrid_Compras)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dGrid_Compras
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGrid_Compras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGrid_Compras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.ProdutoId,
             this.Produto,
             this.FornecedorId,
             this.Fornecedor,
+            this.Qtde,
             this.DataDeRecebimento,
-            this.Editar});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(857, 380);
-            this.dataGridView1.TabIndex = 0;
+            this.bt_Editar});
+            this.dGrid_Compras.Location = new System.Drawing.Point(12, 12);
+            this.dGrid_Compras.Name = "dGrid_Compras";
+            this.dGrid_Compras.Size = new System.Drawing.Size(857, 380);
+            this.dGrid_Compras.TabIndex = 0;
+            this.dGrid_Compras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGrid_Compras_CellContentClick);
+            // 
+            // Bt_Incluir
+            // 
+            this.Bt_Incluir.Location = new System.Drawing.Point(742, 398);
+            this.Bt_Incluir.Name = "Bt_Incluir";
+            this.Bt_Incluir.Size = new System.Drawing.Size(118, 25);
+            this.Bt_Incluir.TabIndex = 1;
+            this.Bt_Incluir.Text = "Nova Compra";
+            this.Bt_Incluir.UseVisualStyleBackColor = true;
+            this.Bt_Incluir.Click += new System.EventHandler(this.Bt_Incluir_Click);
             // 
             // Id
             // 
@@ -70,7 +83,7 @@
             // 
             // Produto
             // 
-            this.Produto.DataPropertyName = "Produto";
+            this.Produto.DataPropertyName = "NomeDoProduto";
             this.Produto.HeaderText = "Produto";
             this.Produto.Name = "Produto";
             // 
@@ -82,9 +95,15 @@
             // 
             // Fornecedor
             // 
-            this.Fornecedor.DataPropertyName = "Fornecedor";
+            this.Fornecedor.DataPropertyName = "NomeDoFornecedor";
             this.Fornecedor.HeaderText = "Fornecedor";
             this.Fornecedor.Name = "Fornecedor";
+            // 
+            // Qtde
+            // 
+            this.Qtde.DataPropertyName = "QtdeDeCompra";
+            this.Qtde.HeaderText = "Qtde Comprada";
+            this.Qtde.Name = "Qtde";
             // 
             // DataDeRecebimento
             // 
@@ -92,22 +111,12 @@
             this.DataDeRecebimento.HeaderText = "DataDeRecebimento";
             this.DataDeRecebimento.Name = "DataDeRecebimento";
             // 
-            // Editar
+            // bt_Editar
             // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
-            // 
-            // Bt_Incluir
-            // 
-            this.Bt_Incluir.Location = new System.Drawing.Point(742, 398);
-            this.Bt_Incluir.Name = "Bt_Incluir";
-            this.Bt_Incluir.Size = new System.Drawing.Size(118, 25);
-            this.Bt_Incluir.TabIndex = 1;
-            this.Bt_Incluir.Text = "Nova Compra";
-            this.Bt_Incluir.UseVisualStyleBackColor = true;
-            this.Bt_Incluir.Click += new System.EventHandler(this.Bt_Incluir_Click);
+            this.bt_Editar.HeaderText = "Editar";
+            this.bt_Editar.Name = "bt_Editar";
+            this.bt_Editar.Text = "Editar";
+            this.bt_Editar.UseColumnTextForButtonValue = true;
             // 
             // Frm_CompraProdutoLista
             // 
@@ -115,24 +124,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 435);
             this.Controls.Add(this.Bt_Incluir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dGrid_Compras);
             this.Name = "Frm_CompraProdutoLista";
             this.Text = "Frm_CompraProdutoLista";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGrid_Compras)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGrid_Compras;
+        private System.Windows.Forms.Button Bt_Incluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProdutoId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn FornecedorId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qtde;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataDeRecebimento;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.Button Bt_Incluir;
+        private System.Windows.Forms.DataGridViewButtonColumn bt_Editar;
     }
 }

@@ -34,6 +34,8 @@ namespace Mercadinho
             modelBuilder.Configurations.Add(new TabelaBDEstoque());
             modelBuilder.Configurations.Add(new TabelaBDVenda());
             modelBuilder.Configurations.Add(new TabelaBDProduto());
+            modelBuilder.Configurations.Add(new TabelaBDCompras());
+            modelBuilder.Configurations.Add(new TabelaBDFornecedor());
             
 
             // Relacionamento da ESTOQUE com PRODUTO

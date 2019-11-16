@@ -15,6 +15,8 @@ namespace Frm_Principal_Mercadinho
 {
     public partial class ATelaPrincipal : Form
     {
+        public RepositoryCompra repositoryCompra = new RepositoryCompra();
+
         public ATelaPrincipal()
         {
             InitializeComponent();
@@ -55,7 +57,7 @@ namespace Frm_Principal_Mercadinho
 
         private void Bt_Compras_Click(object sender, EventArgs e)
         {
-            Frm_CompraProdutoManutencao frm = new Frm_CompraProdutoManutencao();
+            Frm_CompraProdutoManutencao frm = new Frm_CompraProdutoManutencao(0, repositoryCompra);
             AbrirForm(frm);
 
         }
@@ -75,6 +77,12 @@ namespace Frm_Principal_Mercadinho
         private void Bt_EditarCompras_Click_1(object sender, EventArgs e)
         {
             Frm_CompraProdutoLista frm = new Frm_CompraProdutoLista();
+            AbrirForm(frm);
+        }
+
+        private void Bt_EditarVendas_Click(object sender, EventArgs e)
+        {
+            frm_VendaLista frm = new frm_VendaLista();
             AbrirForm(frm);
         }
     }

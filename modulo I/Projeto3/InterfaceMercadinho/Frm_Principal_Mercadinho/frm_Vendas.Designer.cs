@@ -36,13 +36,13 @@
             this.txt_Qtde = new System.Windows.Forms.TextBox();
             this.bt_AdicionarProduto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.bt_Efetivar = new System.Windows.Forms.Button();
-            this.txt_TotalDoProduto = new System.Windows.Forms.TextBox();
-            this.txt_Desconto = new System.Windows.Forms.TextBox();
             this.txt_TotalDeVenda = new System.Windows.Forms.TextBox();
+            this.txt_Desconto = new System.Windows.Forms.TextBox();
+            this.txt_TotalDoProduto = new System.Windows.Forms.TextBox();
+            this.bt_Efetivar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,7 @@
             this.bt_AdicionarProduto.TabIndex = 6;
             this.bt_AdicionarProduto.Text = "Adicionar Produto";
             this.bt_AdicionarProduto.UseVisualStyleBackColor = true;
+            this.bt_AdicionarProduto.Click += new System.EventHandler(this.Bt_AdicionarProduto_Click);
             // 
             // panel1
             // 
@@ -120,23 +121,36 @@
             this.panel1.Size = new System.Drawing.Size(606, 272);
             this.panel1.TabIndex = 7;
             // 
-            // label4
+            // txt_TotalDeVenda
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(351, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Total  Produto:";
+            this.txt_TotalDeVenda.Location = new System.Drawing.Point(447, 85);
+            this.txt_TotalDeVenda.Name = "txt_TotalDeVenda";
+            this.txt_TotalDeVenda.Size = new System.Drawing.Size(100, 20);
+            this.txt_TotalDeVenda.TabIndex = 8;
             // 
-            // label5
+            // txt_Desconto
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(369, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Desconto:";
+            this.txt_Desconto.Location = new System.Drawing.Point(447, 54);
+            this.txt_Desconto.Name = "txt_Desconto";
+            this.txt_Desconto.Size = new System.Drawing.Size(100, 20);
+            this.txt_Desconto.TabIndex = 7;
+            // 
+            // txt_TotalDoProduto
+            // 
+            this.txt_TotalDoProduto.Location = new System.Drawing.Point(447, 21);
+            this.txt_TotalDoProduto.Name = "txt_TotalDoProduto";
+            this.txt_TotalDoProduto.Size = new System.Drawing.Size(100, 20);
+            this.txt_TotalDoProduto.TabIndex = 6;
+            // 
+            // bt_Efetivar
+            // 
+            this.bt_Efetivar.Location = new System.Drawing.Point(33, 140);
+            this.bt_Efetivar.Name = "bt_Efetivar";
+            this.bt_Efetivar.Size = new System.Drawing.Size(537, 23);
+            this.bt_Efetivar.TabIndex = 5;
+            this.bt_Efetivar.Text = "Efetivar";
+            this.bt_Efetivar.UseVisualStyleBackColor = true;
+            this.bt_Efetivar.Click += new System.EventHandler(this.Bt_Efetivar_Click);
             // 
             // label6
             // 
@@ -147,35 +161,23 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Total de Venda:";
             // 
-            // bt_Efetivar
+            // label5
             // 
-            this.bt_Efetivar.Location = new System.Drawing.Point(33, 140);
-            this.bt_Efetivar.Name = "bt_Efetivar";
-            this.bt_Efetivar.Size = new System.Drawing.Size(537, 23);
-            this.bt_Efetivar.TabIndex = 5;
-            this.bt_Efetivar.Text = "Efetivar";
-            this.bt_Efetivar.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(369, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Desconto:";
             // 
-            // txt_TotalDoProduto
+            // label4
             // 
-            this.txt_TotalDoProduto.Location = new System.Drawing.Point(447, 21);
-            this.txt_TotalDoProduto.Name = "txt_TotalDoProduto";
-            this.txt_TotalDoProduto.Size = new System.Drawing.Size(100, 20);
-            this.txt_TotalDoProduto.TabIndex = 6;
-            // 
-            // txt_Desconto
-            // 
-            this.txt_Desconto.Location = new System.Drawing.Point(447, 54);
-            this.txt_Desconto.Name = "txt_Desconto";
-            this.txt_Desconto.Size = new System.Drawing.Size(100, 20);
-            this.txt_Desconto.TabIndex = 7;
-            // 
-            // txt_TotalDeVenda
-            // 
-            this.txt_TotalDeVenda.Location = new System.Drawing.Point(447, 85);
-            this.txt_TotalDeVenda.Name = "txt_TotalDeVenda";
-            this.txt_TotalDeVenda.Size = new System.Drawing.Size(100, 20);
-            this.txt_TotalDeVenda.TabIndex = 8;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(312, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(129, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Preço Unitário do Produto";
             // 
             // frm_Vendas
             // 
