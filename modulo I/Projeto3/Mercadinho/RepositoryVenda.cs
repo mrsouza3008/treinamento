@@ -28,7 +28,7 @@ namespace Mercadinho
 
         public IEnumerable<ClassVenda> Obter() // Lista
         {
-            return Context.Vendas_DB.ToList();
+            return Context.Vendas_DB.Include("Cliente").Include("Produto").ToList();
         }
 
         public void Editar(ClassVenda venda)
