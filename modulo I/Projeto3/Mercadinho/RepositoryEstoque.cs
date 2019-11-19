@@ -68,7 +68,7 @@ namespace Mercadinho
                 else { estoque.QtdeMinimoEstoque = comprado.QtdeDeCompra - 3; }
                 
                 Inserir(estoque);
-               // RepositoryCompra.Inserir(comprado);
+              
                                
             }
             else
