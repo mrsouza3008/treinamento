@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
 using MInhaPrimeiraAPI.Models;
+using MInhaPrimeiraAPI.Models.Validations;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,8 +19,10 @@ namespace MInhaPrimeiraAPI.DAL
 
         public void Adicionar(Produto produto)
         {
-            _contexto.Produtos.Add(produto);
-            _contexto.SaveChanges();
+        
+                _contexto.Produtos.Add(produto);
+                _contexto.SaveChanges();
+     
         }
 
         public void Apagar(Produto produto)
