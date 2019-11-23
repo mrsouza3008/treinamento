@@ -12,8 +12,8 @@ namespace MInhaPrimeiraAPI.Models.Validations
         {
             RuleFor(x => x.Descricao)
                 .NotEmpty()
-                .MaximumLength(60)
-                .WithMessage("Descrição precisa ser informada")
+                .MaximumLength(10)
+                .WithMessage("Descrição precisa ser informada - Validação do FLUENT VALIDATION")
                 ;
 
             RuleFor(x => x.Valor)

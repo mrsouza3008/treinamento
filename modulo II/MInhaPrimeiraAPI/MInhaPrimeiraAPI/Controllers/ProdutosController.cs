@@ -49,9 +49,12 @@ namespace MInhaPrimeiraAPI.Controllers
                     erro = resultadoValidacao.Errors.Select(a => a.ErrorMessage)
                 });
             }
+            else
+            {
+                _produtoRepository.Adicionar(prd);
+                return Created(nameof(AdicionarProduto), new { IdCadastrado = prd.Id });
+            }
 
-            _produtoRepository.Adicionar(prd);
-            return Created(nameof(AdicionarProduto), new { IdCadastrado = prd.Id });
         }
 
         [HttpPut("{id}")]
