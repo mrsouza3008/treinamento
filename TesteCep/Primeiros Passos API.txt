@@ -1,0 +1,74 @@
+1 - Criar Projeto - Vazio
+2 - Instalar Entity Framework Core
+3 - Criar a pasta Class e a Class(Tabela que irá usar) 
+4 - Criar pasta DAL 
+5 - Criar o Contexto da tabela no DAL herdando DbContext  (Class APIContext)
+
+ public class APIContext : DbContext
+    {
+        public APIContext(DbContextOptions<APIContext> options) 
+            :base(options)
+        {
+
+        }
+        
+        public DbSet<Produto> Produtos { get; set; }  
+    }
+
+6 - Configurar o Startup.cs
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+7- No ConfigureServides do Startup.cs inserir o serviço do APIContext (criado no passo 4)
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<APIContext>(options =>
+                options.UseInMemoryDatabase(databaseName: "ProdutosInMemory"));
+        }
+
+8 - Criar na pasta DAL a Interface do Repository da Class com o CRUD (+Lista no Obter)
+
+9 - Criar na pasta DAL o Repository da Class que for usar
+
+	Vai usar em modo de leitura o APIContext
+	public readonly APIContext _contexto;
+
+	
+
+10 - Criar pasta CONTROLLERS
+
+11 - Criar a Class Controller que for usar (Controller é uma palavra Fixa, não trocar)
+
+12 - Herdar o ControllerBase    
+	public class ProdutosController : ControllerBase
+
+13 - Colocar a Interface do Repository em readonly
+
+	public readonly IProdutoRepository _produtoRepository;
+
+
+14 - Criar a pasta VIEW MODELS dentro do MODELS
+
+
+	Criar os Modelos de Visualizacao
+
+	 	public class ProdutoAdicionarViewModel
+		public class ProdutoEditarViewModel
+	
+		 [Required]  // torna o campo obrigatorio
+        	[StringLength(60, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 2)]
+	        public string Descricao { get; set; }
+        	[Required]
+	        [Range(1, 99999, ErrorMessage = "O valor deve estar entre {1} e {2}")]    // coloca uma faixa de valores aceitos
+        	public decimal Valor { get; set; }
+
+
+
+
+
