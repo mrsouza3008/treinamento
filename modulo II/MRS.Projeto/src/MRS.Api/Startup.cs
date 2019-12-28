@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,7 +12,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using MRS.Api.Config;
+using MRS.Business.Interfaces;
+using MRS.Business.Notificacoes;
 using MRS.Data.Context;
+using MRS.Data.Repository;
 
 namespace MRS.Api
 {
@@ -30,6 +35,19 @@ namespace MRS.Api
             services.AddDbContext<ApiContext>( Options => {
                 Options.UseSqlServer(Configuration.GetConnectionString("sql"));
             });
+
+            services.AddAutoMapper(typeof(Startup));
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
+            //DI  - Dependency Injection  - Pasta MRS.API - Pasta CONFIG 
+            services.AddDependecyInjectionConfig();
+
+            //DI - Api Config - Pasta MRS.API - Pasta CONFIG
+            services.AddApiConfig();
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

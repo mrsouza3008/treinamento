@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MRS.Data.Model;
+using MRS.Business.Model;
 
 namespace MRS.Data.Mapping
 {

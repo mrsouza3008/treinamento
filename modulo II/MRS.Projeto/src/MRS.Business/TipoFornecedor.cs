@@ -1,4 +1,4 @@
-namespace MRS.Data
+namespace MRS.Business
 {
     public enum TipoFornecedor
     {
