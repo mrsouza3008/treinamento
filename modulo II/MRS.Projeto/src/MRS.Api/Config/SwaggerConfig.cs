@@ -13,43 +13,37 @@ namespace MRS.Api.Config
 {
     public static class SwaggerConfig
     {
-        public static  IServiceCollection AddSwaggerConfig(this IServiceCollection services)
+        public static IServiceCollection AddSwaggerConfig(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
             {
-               //  c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
-
+                //c.SwaggerDoc("v1", new Info { Title = "RCN API", Version = "v1" });
                 c.OperationFilter<SwaggerDefaultValues>();
-
             });
 
             return services;
-
         }
 
-        public static IApplicationBuilder UseSwaggerConfig
-            (
-                this IApplicationBuilder app,
-                IApiVersionDescriptionProvider provider
-            )
+        public static IApplicationBuilder UseSwaggerConfig(this IApplicationBuilder app, IApiVersionDescriptionProvider provider)
         {
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
             {
-               // c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                // c.SwaggerEndpoint("/swagger/v1/swagger.json", "RCN.API V1");
 
                 foreach (var item in provider.ApiVersionDescriptions)
                 {
-                    c.SwaggerEndpoint($"/swagger/{item.GroupName}/swagger.json,",item.GroupName);
+                    c.SwaggerEndpoint($"/swagger/{item.GroupName}/swagger.json", item.GroupName);
                 }
 
+                c.RoutePrefix = string.Empty;
             });
 
             return app;
         }
-
     }
+
     public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
     {
         private readonly IApiVersionDescriptionProvider _provider;
@@ -63,17 +57,15 @@ namespace MRS.Api.Config
         {
             foreach (var description in _provider.ApiVersionDescriptions)
             {
-                // options.SwaggerDoc(description in _provider.ApiVersionDescriptions)
                 options.SwaggerDoc(description.GroupName, CreateInfoForApiVersion(description));
-
             }
-    
         }
+
         static Info CreateInfoForApiVersion(ApiVersionDescription description)
         {
             var info = new Info
             {
-                Title = "MRS API",
+                Title = "RCN API",
                 Version = description.ApiVersion.ToString()
             };
 
@@ -112,7 +104,6 @@ namespace MRS.Api.Config
             }
         }
     }
-
 
 }
 
