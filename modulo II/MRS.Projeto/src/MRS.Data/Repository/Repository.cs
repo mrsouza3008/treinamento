@@ -4,6 +4,8 @@ using MRS.Business.Model;
 using MRS.Data.Context;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,5 +55,10 @@ namespace MRS.Data.Repository
             _apiContext.Dispose();
         }
 
+        public async  Task<IEnumerable<E>> Buscar(Expression<Func<E, bool>> predicate)
+        {
+            return await _apiContext.Set<E>()
+                .Where(predicate).ToListAsync();
+        }
     }
 }

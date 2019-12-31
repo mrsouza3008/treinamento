@@ -2,6 +2,7 @@
 using MRS.Business.Interfaces.Services;
 using MRS.Business.Model;
 using MRS.Business.Notificacoes;
+using MRS.Business.Validations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -41,8 +42,9 @@ namespace MRS.Business.Services
         public async Task<bool> Inserir(Produto produto)
         {
 
+            new ProdutoValidation().Validate(produto);
             // if
-                Notificar("Documento Invalido  - Isso é uma notificacao");
+            //    Notificar("Documento Invalido  - Isso é uma notificacao");
             // Return False
             
 

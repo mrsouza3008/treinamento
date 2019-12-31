@@ -6,30 +6,31 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MRS.Api.ViewModel;
 using MRS.Business.Interfaces;
 using MRS.Business.Interfaces.Services;
 using MRS.Business.Model;
 using MRS.Business.Notificacoes;
 using MRS.Data.Context;
 
-namespace MRS.Api.Controllers
+namespace MRS.Api.Controllers.V1
 {
-    [Route("api/[controller]")]
-
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     public class ProdutosController : MainController
     {
         private readonly IProdutoRepository _produtoRepository;
         private readonly IProdutoService _produtoService;
         private readonly IMapper _mapper;
 
+
         public ProdutosController
         (
-                IProdutoRepository produtoRepository,
-                IProdutoService produtoService,
-                IMapper mapper,
-                INotificador notificador
+            IProdutoRepository produtoRepository,
+            IProdutoService produtoService,
+            IMapper mapper,
+            INotificador notificador
         ) : base(notificador)
-
         {
             _produtoRepository = produtoRepository;
             _produtoService = produtoService;
@@ -37,12 +38,14 @@ namespace MRS.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Produto>>> Get()
+        [ResponseCache(Duration = 20)]
+        public async Task<ActionResult<IEnumerable<ProdutoViewModel>>> Get()
         {
             return Ok(await _produtoRepository.Obter());
         }
 
-        public async Task<ActionResult<Produto>> Get(Guid id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProdutoViewModel>> Get(Guid id)
         {
             var produto = await _produtoRepository.Obter(id);
 
@@ -51,29 +54,34 @@ namespace MRS.Api.Controllers
                 return NotFound();
             }
 
-            return produto;
+            return _mapper.Map<ProdutoViewModel>(produto);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Guid id, Produto produto)
+        public async Task<IActionResult> Put(Guid id, ProdutoEditarViewModel produtoVM)
         {
-            if (id != produto.Id)
+            if (!ModelState.IsValid) return Result(ModelState);
+
+            if (id != produtoVM.Id)
             {
                 return BadRequest();
             }
 
-            await _produtoService.Editar(produto);
+            await _produtoService.Editar(_mapper.Map<Produto>(produtoVM));
 
-            return Result();
+            return Result("Registro alterado com sucesso");
         }
 
         [HttpPost]
-        public async Task<ActionResult<Produto>> Post(Produto produto)
+        public async Task<ActionResult<Produto>> Post(ProdutoAdicionarViewModel produtoVM)
         {
-            await _produtoService.Inserir(produto);
+            if (!ModelState.IsValid) return Result(ModelState);
 
-            //return CreatedAtAction("Post", new { id = produto.Id }, produto);
-            return Result();
+            var prod = _mapper.Map<Produto>(produtoVM);
+
+            await _produtoService.Inserir(prod);
+
+            return Result("Regitro incluido com sucesso");
         }
 
         [HttpDelete("{id}")]
@@ -87,8 +95,8 @@ namespace MRS.Api.Controllers
 
             await _produtoService.Apagar(produto);
 
-            // return produto;
-            return Result();
+            return Result("Registro apagado com sucesso");
         }
     }
+
 }

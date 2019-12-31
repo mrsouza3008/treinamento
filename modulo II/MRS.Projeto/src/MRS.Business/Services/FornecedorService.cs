@@ -1,9 +1,12 @@
-﻿using MRS.Business.Interfaces;
+﻿using FluentValidation.Results;
+using MRS.Business.Interfaces;
 using MRS.Business.Interfaces.Services;
 using MRS.Business.Model;
 using MRS.Business.Notificacoes;
+using MRS.Business.Validations;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,13 +28,22 @@ namespace MRS.Business.Services
             return true;
         }
 
-        public void Dispose()
-        {
-            _fornecedorRepository.Dispose();
-        }
+       
 
         public async Task<bool> Editar(Fornecedor fornecedor)
         {
+
+            //Validar se o documento é valido
+            new FornecedorValidation().Validate(fornecedor);
+
+            // valida se ja existe o fornecedor com esse documento
+            if (_fornecedorRepository.Buscar(f => f.Documento == fornecedor.Documento && f.Id != fornecedor.Id).Result.Any()) // retorna verdadeiro se existe o documento
+            {
+                Notificar("Já existe um fornecedor com este documento");
+                return false;
+            }
+
+
             await _fornecedorRepository.Editar(fornecedor);
             return true;
         }
@@ -39,11 +51,29 @@ namespace MRS.Business.Services
         public async Task<bool> Inserir(Fornecedor fornecedor)
         {
 
-            Notificar("Minha notificacao de Inserir Fornecedor");
-             
+            //Validar se o documento é valido
+            if (EfetuarValidacao(new FornecedorValidation(), fornecedor))
+            {
+                return false;
+            }
+
+
+            // valida se ja existe o fornecedor com esse documento
+            if (_fornecedorRepository.Buscar(f => f.Documento == fornecedor.Documento).Result.Any()) // retorna verdadeiro se existe o documento
+            {
+                Notificar("Já existe um fornecedor com este documento");
+                return false;
+            }
+
+
             await _fornecedorRepository.Inserir(fornecedor);
             return true;
 
+        }
+
+        public void Dispose()
+        {
+            _fornecedorRepository.Dispose();
         }
     }
 }
