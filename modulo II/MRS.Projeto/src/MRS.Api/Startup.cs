@@ -55,6 +55,9 @@ namespace MRS.Api
             //      return KissLog.Logger.Factory.Get();
             // });
 
+            services.AddIdentityConfig(Configuration);
+
+
             services.AddApiVersioning(options =>
             {
                 options.AssumeDefaultVersionWhenUnspecified = true;
@@ -158,9 +161,9 @@ namespace MRS.Api
                });    // Verificar status da API
 
             // /healthchecks-ui //  Para verificar Status do Banco - Necessario instalar Packages
-            app.UseHealthChecksUI();  
+            app.UseHealthChecksUI();
 
-      
+            app.UseAuthentication();
 
             app.UseMvc();  // --------------------->>>>  Deixar o UseMvc sempre no final
 

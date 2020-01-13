@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -77,6 +78,13 @@ namespace MRS.Api.Controllers.V1
         {
             if (!ModelState.IsValid) return Result(ModelState);
 
+            var nomeImagem = $"{Guid.NewGuid()}.jpg";
+            if (!UploadImagem(produtoVM.Imagem, nomeImagem))
+            {
+                return Result();
+            };
+            produtoVM.Imagem = nomeImagem;
+
             var prod = _mapper.Map<Produto>(produtoVM);
 
             await _produtoService.Inserir(prod);
@@ -96,6 +104,23 @@ namespace MRS.Api.Controllers.V1
             await _produtoService.Apagar(produto);
 
             return Result("Registro apagado com sucesso");
+        }
+
+        private bool UploadImagem(string imagemBase64, string nomeImagem)
+        {
+            if (string.IsNullOrEmpty(imagemBase64))
+            {
+                NotificarErro("É necessário informar uma imagem para o produto");
+                return false;
+            }
+
+            var imagemByte = Convert.FromBase64String(imagemBase64);
+
+            var pathImagem = Path.Combine("D:","TEMP", nomeImagem);
+
+            System.IO.File.WriteAllBytes(pathImagem, imagemByte);
+
+            return true;
         }
     }
 

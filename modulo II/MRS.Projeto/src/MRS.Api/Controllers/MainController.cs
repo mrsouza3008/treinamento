@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using MRS.Business.Notificacoes;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace MRS.Api.Controllers
 {
     [ApiController]
+    [Authorize]
     public abstract class MainController : ControllerBase
     {
         private INotificador _notificador;
@@ -61,6 +63,11 @@ namespace MRS.Api.Controllers
             }
 
             
+        }
+
+        protected void NotificarErro(string erro)
+        {
+            _notificador.Handle(new Notificacao(erro));
         }
     }
 }
